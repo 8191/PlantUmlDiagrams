@@ -7,11 +7,11 @@ import sublime
 
 class Sublime3Viewer(BaseViewer):
 	def __str__(self):
-		return "Sublime 3 Simple Viewer"
+		return "Sublime Simple Viewer"
 
 	def load(self):
-		if not sublime.version().startswith('3'):
-			raise Exception("Not Sublime 3!")
+		if not (sublime.version().startswith('3') or sublime.version().startswith('4')):
+			raise Exception("Not Sublime 3 or 4!")
 
 	def view(self,diagram_files):
 		for diagram_file in diagram_files:
